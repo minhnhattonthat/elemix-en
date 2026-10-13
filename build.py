@@ -54,8 +54,7 @@ def build(script=SCRIPT, out=OUT):
     rom += b"\xff" * (ROM_SIZE - len(rom))
     gspace = Space(GFX_LO, ROM_SIZE)
     for e in gfxtext.load_spec():
-        if e.get("en") or e.get("ops") or e.get("pieces"):
-            gfxtext.insert(rom, e, gspace)
+        gfxtext.insert(rom, e, gspace)
     out.parent.mkdir(exist_ok=True)
     fnt, widths = font.build_font(rom)
     fbin, wbin = out.with_suffix(".font.bin"), out.with_suffix(".widths.bin")

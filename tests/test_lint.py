@@ -58,7 +58,7 @@ def test_no_ordinal_after_variable():
 
 def test_graphics_fit(rom):
     import gfxtext
-    probs = [p for e in gfxtext.load_spec() if e.get("en") or e.get("ops") or e.get("pieces") for p in gfxtext.check(rom, e)]
+    probs = [p for e in gfxtext.load_spec() for p in gfxtext.check(rom, e)]
     assert not probs
 
 

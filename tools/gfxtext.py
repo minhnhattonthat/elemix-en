@@ -198,6 +198,11 @@ def render(rom, e):
 def check(rom, e):
     if e["kind"] == "pool":
         return pool_check(rom, e)
+    if e["kind"] == "logo":
+        import logo
+        im, px, tpal = logo.render(rom, e)
+        n = len(logo.encode(px, tpal, im.w, im.h)[0]) // 32
+        return [f"logo {e['desc']}: {n} tiles > {e['max_tiles']}"] if n > e["max_tiles"] else []
     im, px = render(rom, e)
     probs = []
     g = glyphs()
@@ -227,8 +232,13 @@ def insert(rom, e, space):
     """Write new tiles + map for entry e; repoint its descriptor's tile pointer and map slot."""
     if e["kind"] == "pool":
         return pool_insert(rom, e, space)
-    im, px = render(rom, e)
-    tiles, mp = encode(px, im.w, im.h)
+    if e["kind"] == "logo":
+        import logo
+        im, px, tpal = logo.render(rom, e)
+        tiles, mp = logo.encode(px, tpal, im.w, im.h)
+    else:
+        im, px = render(rom, e)
+        tiles, mp = encode(px, im.w, im.h)
     t_at = space.alloc(4 + len(tiles))
     struct.pack_into("<I", rom, t_at, len(tiles))
     rom[t_at + 4:t_at + 4 + len(tiles)] = tiles
@@ -331,6 +341,14 @@ def preview(rom, out):
                 sheet.paste(ims[i].resize((ims[i].width * 2, ims[i].height * 2), P.NEAREST), (0, y))
                 y += ims[i].height * 2 + 4
             sheet.save(out / f"pool_{e['desc']}.png")
+            continue
+        if e["kind"] == "logo":
+            import logo
+            im, px, tpal = logo.render(rom, e)
+            img = P.new("RGB", (im.w * 8, im.h * 8))
+            img.putdata([(40, 40, 90) if not v else im.rgb(im.pals[tpal[y // 8][x // 8]][v])
+                         for y, row in enumerate(px) for x, v in enumerate(row)])
+            img.resize((im.w * 24, im.h * 24), P.NEAREST).save(out / f"{e['desc']}.png")
             continue
         im, px = render(rom, e)
         pal = [im.rgb(c) for c in im.pals[0]]

@@ -1,4 +1,6 @@
 [
+ {"desc": "2BB150", "kind": "logo", "note": "title logo; BG2 char 2 base 0, BG1 tiles start at 0x100", "max_tiles": 256,
+  "text": "ELEMIX!", "box": [46, 16, 198, 72], "size": 72, "bounce": [4, -3, 3, -4, 2, -3, 0], "shear": 0.16, "spacing": -1, "keep_emblem": false},
  {"desc": "2F9568", "kind": "page", "bg": 9, "note": "pause > SAVE confirm; cursor OBJ sits left of Yes/No", "icons": {},
   "ops": [
    {"clear": [4, 8, 204, 88]},
@@ -14,6 +16,15 @@
                  {"text": "Save Game|Title Screen|Restart Stage", "x": 24, "y": 37, "ink": 1, "pitch": 16},
                  {"text": "Back", "x": 24, "y": 85, "ink": 1}]}
   }},
+ {"desc": "2F3F9C", "kind": "pool", "slots": "3DA72C", "count": 35, "bg": 0,
+  "note": "time attack screen; piece 18 = prompt; white (14) text, dark (3) outline",
+  "pieces": {
+   "18": {"icons": {"A": [0, 5, 14, 19]},
+          "ops": [{"clear": [0, 0, 152, 24]}, {"text": "{A}: Start TIME ATTACK", "x": 1, "y": 8, "ink": 14, "outline": 3}]}
+  }},
+ {"desc": "2F56C0", "kind": "pool", "slots": "3DA7BC", "count": 21, "bg": 0,
+  "note": "stage RESULT screen; pieces 6/19 = the point unit after scores, left blank in English",
+  "pieces": {"6": {"ops": [{"clear": [0, 0, 16, 16]}]}, "19": {"ops": [{"clear": [0, 0, 16, 16]}]}}},
  {"desc": "2F192C", "kind": "pool", "slots": "3DA634", "count": 61, "bg": 0,
   "note": "options / records / erase-save tile pool; white (15) text, dark blue (8) outline",
   "pieces": {
