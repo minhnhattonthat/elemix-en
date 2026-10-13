@@ -12,11 +12,12 @@ sys.path.insert(0, str(ROOT / "tools"))
 from codec import Codec, load_table
 from text import ROM, load_script, SCRIPT
 from wrap import wrap
-import font
+import font, gfxtext
 
 OUT = ROOT / "build" / "elemix_en.gba"
 ARMIPS = ROOT / "tools" / "armips" / "armips.exe"
 FREE_LO, FREE_HI = 0x3DB504, 0x3F0000  # 0xFF padding; 0x3F0000+ belongs to asm/main.asm (font, widths, code)
+GFX_LO, ROM_SIZE = 0x400000, 0x800000  # expanded area (EEPROM saves are fine up to 16 MiB): redrawn images
 
 
 class Space:
@@ -50,6 +51,11 @@ def build_text(script=SCRIPT):
 
 def build(script=SCRIPT, out=OUT):
     rom = build_text(script)
+    rom += b"\xff" * (ROM_SIZE - len(rom))
+    gspace = Space(GFX_LO, ROM_SIZE)
+    for e in gfxtext.load_spec():
+        if e["en"]:
+            gfxtext.insert(rom, e, gspace)
     out.parent.mkdir(exist_ok=True)
     fnt, widths = font.build_font(rom)
     fbin, wbin = out.with_suffix(".font.bin"), out.with_suffix(".widths.bin")

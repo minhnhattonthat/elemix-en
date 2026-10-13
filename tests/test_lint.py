@@ -56,6 +56,12 @@ def test_no_ordinal_after_variable():
     assert not offenders(lambda e: re.search(r"\d(st|nd|rd|th)\b", e["en"]) and "{" in e["en"])
 
 
+def test_graphics_fit(rom):
+    import gfxtext
+    probs = [p for e in gfxtext.load_spec() if e["en"] for p in gfxtext.check(rom, e)]
+    assert not probs
+
+
 def test_glossary_avoid():
     avoid = []
     for line in (ROOT / "glossary.md").read_text(encoding="utf-8").splitlines():
