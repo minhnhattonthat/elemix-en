@@ -27,6 +27,8 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 | テュポン | Typhon | 3rd servant | Typhoon |
 | フーロク | Furoku | owl, keeper of the forest | |
 | シロップ | Syrup | fairy guide | Shiroppu |
+| アスラ | Asura | Skip's ancestor who sealed Marius 500 years ago | |
+| 町人 / 兵士 / 門番 | Townsperson / Soldier / Gatekeeper | name tags | |
 
 ## Places
 | JP | EN | notes | Avoid |
@@ -41,7 +43,11 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 ## Items / magic / terms
 | JP | EN | notes | Avoid |
 |---|---|---|---|
-| 腕輪 / リング | Bracelet / Ring | same artifact, both words used | |
+| 腕輪 / リング | bracelet / Ring | same artifact; "bracelet" lowercase, "Ring" capitalised as the artifact | |
+| エレメンタル・リング | Elemental Ring | | |
+| 風のエレメンタルリング | Wind Elemental Ring | Marius holds it | |
+| ヨウガン / ようがん | lava | | |
+| おおひろ間 | great hall | castle | |
 | 火の魔法 | Fire Magic | | |
 | 氷の魔法 | Ice Magic | | |
 | 土の魔法 | Earth Magic | | |

@@ -122,7 +122,7 @@
   "ptr": "02C916",
   "len": 68,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}くっ{spd:09}　{spd:00}魔物め！{n}{spd:03}オ{spd:00}レの剣が　きかないとは！{n}",
-  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Ngh{spd:09} {spd:00}Blasted monster!{n}{spd:03}M{spd:00}y sword won't even scratch it!",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Ngh...{spd:09} {spd:00}Blasted monster!{n}{spd:03}M{spd:00}y sword won't even scratch it!",
   "notes": ""
  },
  {
@@ -248,7 +248,7 @@
   "ptr": "02D046",
   "len": 294,
   "jp": "我が名は　へリス{p}{n}冥界の騎士を　統べる長にて{n}我が主マリウスの{n}第１の僕なり{p}{n}誰かと思えば　グラックス王の{n}息子か、、、{n}む　その腕にあるのは！{p}{n}こんな子供が{n}持っているとはな{n}探す手間が　はぶけたわ{p}{n}貴様が持っている　その腕輪{n}力ずくでも　渡してもらうぞ{p}{n}手加減はせぬ{n}ゆくぞ！{n}",
-  "en": "My name is Heris.{p}Commander of the Knights of the Underworld, and first servant of my master, Marius.{p}And who might you be? The son of King Gracchus... Hm? That, on your arm!{p}To think a mere child would carry it. You've saved me the trouble of searching.{p}That bracelet you wear... I will have it, by force if need be.{p}I will show no mercy. Here I come!",
+  "en": "My name is Heris.{p}Commander of the Knights of the Underworld, and first servant of my master, Marius.{p}Who have we here...? The son of King Gracchus... Hm? That, on your arm!{p}To think a mere child would carry it. You've saved me the trouble of searching.{p}That bracelet you wear... I will have it, by force if need be.{p}I will show no mercy. Here I come!",
   "notes": ""
  },
  {
@@ -329,7 +329,7 @@
   "ptr": "02D644",
   "len": 216,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}この用水路は　水門が閉じて{n}いるから　かれているんじゃ{n}{col:01}水門を　あけることが{n}できれば{col:00}　水路に水をみたせ{n}るじゃろ{p}{n}たしか　{col:01}水門の近くに{n}水門を　あけるための{n}スイッチ部屋{col:01}があったかの{n}",
-  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}This canal has run dry because the floodgate is shut.{p}If you can {col:01}open the floodgate{col:00}, the water will fill the canal.{p}If memory serves, {col:01}there was a switch room near the floodgate{col:00} for opening it...",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}Hoo hoo. The floodgate is shut, so this canal has run dry.{p}If you can {col:01}open the floodgate{col:00}, the water will fill the canal.{p}If memory serves, {col:01}there was a switch room near the floodgate{col:00} for opening it...",
   "notes": ""
  },
  {
@@ -338,7 +338,7 @@
   "ptr": "02D71C",
   "len": 72,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}水門近くの　スイッチ部屋で{n}水門をあけられるじゃろ{n}",
-  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}You can open the floodgate from the switch room near it.",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}Hoo. The switch room by the floodgate opens it.",
   "notes": ""
  },
  {
@@ -374,7 +374,7 @@
   "ptr": "02D990",
   "len": 210,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}このパズルを解けば{n}地下いせきの　入口に出るぞよ{n}{col:01}すべての魔法ブロックを{n}魔法陣パネルの{n}上におく{col:00}のじゃ{p}{n}ブロックのいちを{n}{col:01}元にもどすには　入口にある{n}せきばんを　しらべる{col:00}のじゃ{n}",
-  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}Solve this puzzle to reach the entrance to the underground ruins.{p}{col:01}Put every magic block on a magic circle panel{col:00}.{p}To {col:01}put the blocks back where they started, examine the stone tablet at the entrance{col:00}.",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}Hoo. Solve this puzzle to reach the entrance to the underground ruins.{p}{col:01}Put every magic block on a magic circle panel{col:00}.{p}To {col:01}put the blocks back where they started, examine the stone tablet at the entrance{col:00}.",
   "notes": ""
  },
  {
@@ -455,7 +455,7 @@
   "ptr": "02E11A",
   "len": 280,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}ここが　はるか昔にさかえた{n}ぶんめいの　いせきよ{p}{n}ここから　下方向に進んだ{n}ところにある　大きな{n}かいだんまで行くのよ{p}{n}とちゅう　道がとぎれたり{n}してるけど　あたま使って{n}進むのよ{p}{n}それじゃ　あたしは{n}一足先に行ってるから{p}{n}がんばって　きなさいよー！{n}",
-  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}These are the ruins of a civilization that flourished long, long ago.{p}From here, head downward until you reach a big staircase.{p}The path breaks off in places, so use your head to get through.{p}Well then, I'll go on ahead.{p}Do your best, OK?!",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}These are the ruins of a civilization that flourished long, long ago.{p}From here, head downward until you reach a big staircase.{p}The path breaks off in places, so use your head to get through.{p}Well then, I'll go on ahead.{p}Now hurry up and catch up with me!",
   "notes": ""
  },
  {
@@ -500,7 +500,7 @@
   "ptr": "02E6CA",
   "len": 342,
   "jp": "我が名は　マリウス{p}{n}ついに　力のふっかつの{n}日がきたか、、、{p}{n}あとは　貴様の持つリングを{n}我が持つリングと{n}あわせるのみ{p}{n}さすれば　我は{n}ゆいつむにの　魔力を{n}手に入れられる{p}{n}その前に　カンネ王家の{n}人間を　ちまつりにあげると{n}するか、、、{p}{n}我を　封印した貴様の{n}祖先アスラ。５００ねん前の{n}うらみ　今こそはらさん！{p}{n}ゆくぞ‼{n}",
-  "en": "My name is Marius.{p}At last, the day my power is restored has come...{p}All that remains is to join the Ring you carry with the Ring I hold.{p}Then I shall possess magic power without equal.{p}But first, I shall offer up a member of the House of Khanne as a blood sacrifice...{p}Your ancestor Asura sealed me away. Now I shall avenge 500 years of hatred!{p}Here I come!!",
+  "en": "My name is Marius.{p}At last, the day my power is restored has come...{p}All that remains is to join the Ring you carry with the Ring I hold.{p}Then I shall possess magic power without equal.{p}But first, I shall spill the blood of the House of Khanne...{p}Your ancestor Asura sealed me away. Now I shall avenge 500 years of hatred!{p}Here I come!!",
   "notes": ""
  },
  {
@@ -518,7 +518,7 @@
   "ptr": "02E8BC",
   "len": 354,
   "jp": "{spd:00}{col:01}グラックス{col:00}{n}{spd:05}リングが　おまえを{n}こばんだのだよ　マリウス{p}{n}いかに　おまえの魔力が{n}強かろうと　リングは使い{n}こなせなかったのだよ{p}{n}あしき力では　リングの{n}本当の力は　ひきだせないのだ{p}{n}もう　このよでリングを{n}使いこなせるのは{n}スキップだけなのだよ{p}{n}{spd:00}{col:01}マリウス{col:00}{n}我は　リングを使いこなして{n}いなかったとは、、、{p}{n}さらばだ、、、！{p}{n}",
-  "en": "{spd:00}{col:01}Gracchus{col:00}{n}{spd:05}The Ring rejected you, Marius.{p}However great your magic power, you could never truly master the Ring.{p}Evil power cannot draw out the Ring's true power.{p}In all this world, only Skip can master the Ring now.{p}{spd:00}{col:01}Marius{col:00}{n}{spd:05}So I never truly mastered the Ring...{p}Farewell...!",
+  "en": "{spd:00}{col:01}Gracchus{col:00}{n}{spd:05}The Ring rejected you, Marius.{p}However great your magic power, you could never truly master the Ring.{p}Evil power cannot draw out the Ring's true power.{p}In all this world, only Skip can master the Ring now.{p}{spd:00}{col:01}Marius{col:00}{n}So I never truly mastered the Ring...{p}Farewell...!",
   "notes": ""
  },
  {
