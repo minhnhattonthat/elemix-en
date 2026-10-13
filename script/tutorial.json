@@ -1,0 +1,72 @@
+[
+ {"desc": "33FB18", "kind": "page", "bg": 2, "note": "tutorial page 1", "icons": {},
+  "ops": [
+   {"clear": [4, 20, 124, 38]}, {"clear": [4, 40, 238, 93]}, {"clear": [5, 96, 233, 141]},
+   {"clear": [88, 144, 127, 160]}, {"clear": [158, 144, 236, 160]},
+   {"text": "~ Goal of the Game ~", "x": 6, "y": 24, "ink": 15},
+   {"text": "Become Prince Skip, defeat the evil Grand|Sorcerer Marius, who awaits on the final|stage, and rescue King Gracchus!", "x": 6, "y": 44, "ink": 15},
+   {"text": "The TUTORIAL uses the default buttons.|You can change them under OPTIONS.", "x": 120, "y": 106, "ink": 15, "align": "center", "pitch": 15},
+   {"text": "Next", "x": 92, "y": 147, "ink": 1, "outline": 15},
+   {"text": "Title Screen", "x": 161, "y": 147, "ink": 1, "outline": 15}
+  ]},
+ {"desc": "342820", "kind": "page", "bg": 2, "note": "tutorial page 2; OBJ: transformation sprites mid-screen",
+  "icons": {"B": [6, 21, 22, 36], "B2": [160, 90, 176, 105]},
+  "ops": [
+   {"clear": [2, 2, 180, 20]}, {"clear": [2, 20, 238, 72]}, {"clear": [158, 86, 236, 122]},
+   {"clear": [10, 144, 52, 160]}, {"clear": [88, 144, 127, 160]}, {"clear": [158, 144, 236, 160]},
+   {"text": "~ Master Transformation! ~", "x": 6, "y": 6, "ink": 15},
+   {"text": "{B} switches Skip's magic! Each element|gives you different magic, so try out|all kinds!", "x": 6, "y": 25, "ink": 15},
+   {"text": "{B2} to|transform!", "x": 200, "y": 93, "ink": 15, "align": "center"},
+   {"text": "Back", "x": 50, "y": 147, "ink": 1, "outline": 15, "align": "right"},
+   {"text": "Next", "x": 92, "y": 147, "ink": 1, "outline": 15},
+   {"text": "Title Screen", "x": 161, "y": 147, "ink": 1, "outline": 15}
+  ]},
+ {"desc": "346850", "kind": "page", "bg": 2, "note": "tutorial page 3; OBJ: spirit in the grey box", "icons": {},
+  "ops": [
+   {"clear": [2, 2, 180, 22]}, {"clear": [2, 22, 238, 76]}, {"clear": [10, 82, 230, 98]},
+   {"clear": [10, 144, 52, 160]}, {"clear": [88, 144, 127, 160]}, {"clear": [158, 144, 236, 160]},
+   {"text": "~ Use Charge Magic! Part 1 ~", "x": 6, "y": 6, "ink": 15},
+   {"text": "When your magic powers up, you can use|Charge Shots! To power up, you need the|Elemental Spirits that enemies drop!", "x": 6, "y": 28, "ink": 15},
+   {"text": "This is an \"Elemental Spirit\"!", "x": 120, "y": 86, "ink": 15, "align": "center"},
+   {"text": "Back", "x": 50, "y": 147, "ink": 1, "outline": 15, "align": "right"},
+   {"text": "Next", "x": 92, "y": 147, "ink": 1, "outline": 15},
+   {"text": "Title Screen", "x": 161, "y": 147, "ink": 1, "outline": 15}
+  ]},
+ {"desc": "349DC0", "kind": "page", "bg": 2, "note": "tutorial page 4; OBJ: meters and Skip", "icons": {"A": [33, 36, 48, 51]},
+  "ops": [
+   {"clear": [2, 2, 180, 20]}, {"clear": [2, 20, 238, 56]}, {"clear": [100, 104, 238, 141]},
+   {"clear": [10, 144, 52, 160]}, {"clear": [88, 144, 127, 160]}, {"clear": [158, 144, 236, 160]},
+   {"text": "~ Use Charge Magic! Part 2 ~", "x": 6, "y": 6, "ink": 15},
+   {"text": "Once the red Power-Up Meter hits level 2,|try holding down {A}!", "x": 6, "y": 25, "ink": 15},
+   {"text": "Once the blue Charge|Meter fills that far,|release the button to fire!", "x": 236, "y": 106, "ink": 15, "align": "right", "pitch": 12},
+   {"text": "Back", "x": 50, "y": 147, "ink": 1, "outline": 15, "align": "right"},
+   {"text": "Next", "x": 92, "y": 147, "ink": 1, "outline": 15},
+   {"text": "Title Screen", "x": 161, "y": 147, "ink": 1, "outline": 15}
+  ]},
+ {"desc": "34E010", "kind": "page", "bg": 2, "note": "tutorial page 5; OBJ: beat counters left of each caption", "icons": {},
+  "ops": [
+   {"clear": [2, 2, 180, 22]}, {"clear": [2, 22, 238, 92]}, {"clear": [40, 100, 124, 136]}, {"clear": [156, 100, 234, 136]},
+   {"clear": [10, 144, 52, 160]}, {"clear": [88, 144, 127, 160]}, {"clear": [158, 144, 236, 160]},
+   {"text": "~ Go for the Beat! ~", "x": 6, "y": 6, "ink": 15},
+   {"text": "Defeat enemies in a row without taking|damage, and each one is worth more points!|Chain defeats to raise the Beat count at|the top right. Try to get it to 100!", "x": 6, "y": 27, "ink": 15},
+   {"text": "Beat 4:|40 points", "x": 52, "y": 106, "ink": 15, "pitch": 14},
+   {"text": "Beat 12:|120 points!", "x": 166, "y": 106, "ink": 15, "pitch": 14},
+   {"text": "Back", "x": 50, "y": 147, "ink": 1, "outline": 15, "align": "right"},
+   {"text": "Next", "x": 92, "y": 147, "ink": 1, "outline": 15},
+   {"text": "Title Screen", "x": 161, "y": 147, "ink": 1, "outline": 15}
+  ]},
+ {"desc": "351DE0", "kind": "page", "bg": 2, "note": "tutorial page 6; OBJ balloon icons at about (187,61) and (118,108) sit in gaps of the right column",
+  "icons": {"A": [91, 27, 106, 41]},
+  "ops": [
+   {"clear": [2, 2, 180, 21]}, {"clear": [2, 21, 238, 59]}, {"clear": [108, 59, 238, 140]},
+   {"clear": [10, 144, 52, 160]}, {"clear": [158, 144, 236, 160]},
+   {"text": "~ Talk to the Messengers! ~", "x": 6, "y": 6, "ink": 15},
+   {"text": "Press {A} to talk to townspeople and|soldiers. They'll give you game hints!", "x": 6, "y": 29, "ink": 15},
+   {"text": "Only when", "x": 184, "y": 63, "ink": 15, "align": "right"},
+   {"text": "appears can you|talk to townspeople.", "x": 112, "y": 79, "ink": 15},
+   {"text": "not shown? Defeat", "x": 134, "y": 111, "ink": 15},
+   {"text": "all the enemies nearby.", "x": 112, "y": 127, "ink": 15},
+   {"text": "Back", "x": 50, "y": 147, "ink": 1, "outline": 15, "align": "right"},
+   {"text": "Title Screen", "x": 161, "y": 147, "ink": 1, "outline": 15}
+  ]}
+]
