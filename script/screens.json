@@ -1,0 +1,51 @@
+[
+ {"desc": "2F9568", "kind": "page", "bg": 9, "note": "pause > SAVE confirm; cursor OBJ sits left of Yes/No", "icons": {},
+  "ops": [
+   {"clear": [4, 8, 204, 88]},
+   {"text": "The game will be saved.|Existing save data will be overwritten.", "x": 104, "y": 13, "ink": 1, "align": "center", "pitch": 15},
+   {"text": "Is that OK?", "x": 104, "y": 53, "ink": 1, "align": "center"},
+   {"text": "Yes", "x": 70, "y": 75, "ink": 1},
+   {"text": "No", "x": 120, "y": 75, "ink": 1}
+  ]},
+ {"desc": "2F7E8C", "kind": "pool", "slots": "3DA848", "count": 16, "bg": 9,
+  "note": "pause window (piece 2); cursor OBJ left of the items; black (1) text",
+  "pieces": {
+   "2": {"ops": [{"clear": [18, 33, 110, 99]},
+                 {"text": "Save Game|Title Screen|Restart Stage", "x": 24, "y": 37, "ink": 1, "pitch": 16},
+                 {"text": "Back", "x": 24, "y": 85, "ink": 1}]}
+  }},
+ {"desc": "2F192C", "kind": "pool", "slots": "3DA634", "count": 61, "bg": 0,
+  "note": "options / records / erase-save tile pool; white (15) text, dark blue (8) outline",
+  "pieces": {
+   "1":  {"ops": [{"clear": [0, 0, 80, 16]}, {"text": "Button Setup", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "11": {"ops": [{"clear": [0, 0, 64, 16]}, {"text": "Cast Magic", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "12": {"ops": [{"clear": [0, 0, 64, 16]}, {"text": "Transform", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "13": {"ops": [{"clear": [0, 0, 64, 16]}, {"text": "Lock Facing", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "14": {"ops": [{"clear": [0, 0, 64, 16]}, {"text": "Special Magic", "x": 0, "y": 4, "ink": 15, "outline": 8}]},
+   "15": {"ops": [{"clear": [0, 0, 64, 16]}, {"text": "Records", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "16": {"ops": [{"clear": [0, 0, 112, 16]}, {"text": "Erase Save Data", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "17": {"ops": [{"clear": [0, 0, 112, 16]}, {"text": "Adjust Contrast", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "18": {"ops": [{"clear": [0, 0, 104, 16]}, {"text": "Dark", "x": 1, "y": 4, "ink": 15, "outline": 8},
+                  {"text": "Light", "x": 99, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "24": {"ops": [{"clear": [0, 0, 48, 16]}, {"text": "Back", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "25": {"ops": [{"clear": [24, 0, 104, 24]}, {"text": "RECORDS", "x": 27, "y": 8, "ink": 15, "outline": 8}]},
+   "40": {"ops": [{"clear": [0, 0, 16, 16]}]},
+   "42": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Ring User", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "43": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Magician", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "44": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Wizard", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "45": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Sorcerer", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "46": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Grand Wizard", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "47": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Magic Saber", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "48": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Gimmick Master", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "49": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Elemental Master", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "50": {"ops": [{"clear": [30, 0, 128, 16]}, {"text": "Elemix Maker", "x": 126, "y": 4, "ink": 15, "outline": 8, "align": "right"}]},
+   "52": {"icons": {"A": [0, 1, 14, 15], "B": [29, 1, 43, 15]},
+          "ops": [{"clear": [0, 0, 96, 16]}, {"text": "{A} or {B}: Back", "x": 1, "y": 4, "ink": 15, "outline": 8}]},
+   "53": {"ops": [{"clear": [24, 0, 144, 24]}, {"text": "ERASE SAVE DATA", "x": 27, "y": 8, "ink": 15, "outline": 8}]},
+   "55": {"ops": [{"clear": [0, 0, 152, 16]}, {"text": "This erases your save data.", "x": 2, "y": 4, "ink": 15, "outline": 8}]},
+   "56": {"ops": [{"clear": [0, 0, 176, 16]}, {"text": "Are you really sure?", "x": 2, "y": 4, "ink": 15, "outline": 8}]},
+   "57": {"ops": [{"clear": [0, 0, 48, 16]}, {"text": "Yes /", "x": 2, "y": 4, "ink": 15, "outline": 8}]},
+   "58": {"ops": [{"clear": [0, 0, 40, 16]}, {"text": "No", "x": 2, "y": 4, "ink": 15, "outline": 8}]},
+   "59": {"ops": [{"clear": [8, 8, 168, 24]}, {"text": "Save data erased.", "x": 88, "y": 10, "ink": 15, "outline": 8, "align": "center"}]}
+  }}
+]

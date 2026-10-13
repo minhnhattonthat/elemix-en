@@ -118,10 +118,13 @@ def page(rom, e):
            {NAME} draws icon NAME = e["icons"][NAME] ([x0, y0, x1, y1] of the ORIGINAL image) inline.
            outline: draw `ink` and then an 8-neighbour edge in index O (footer labels)."""
     im = Image(rom, int(e["desc"], 16))
-    orig = pixels(im)
+    return im, run_ops(pixels(im), e["ops"], e.get("icons", {}), e["bg"])
+
+
+def run_ops(orig, ops, icons, bg):
+    """Apply page ops (see page()) to a copy of orig; icons are rects in orig."""
     px = [r[:] for r in orig]
     g = glyphs()
-    icons = e.get("icons", {})
 
     def seg_width(s):
         w = 0
@@ -129,12 +132,12 @@ def page(rom, e):
             w += (icons[part][2] - icons[part][0] + 1) if i % 2 else text_width(part, g)
         return w
 
-    for op in e["ops"]:
+    for op in ops:
         if "clear" in op:
             x0, y0, x1, y1 = op["clear"]
             for y in range(y0, y1):
                 for x in range(x0, x1):
-                    px[y][x] = e["bg"]
+                    px[y][x] = bg
             continue
         pitch, align = op.get("pitch", 16), op.get("align", "left")
         layer = blank(len(px[0]), len(px)) if "outline" in op else px
@@ -146,20 +149,23 @@ def page(rom, e):
                 if i % 2:                          # icon: copy from the original, vertically centred on the caps
                     ix0, iy0, ix1, iy1 = icons[part]
                     top = y + 3 + 5 - (iy1 - iy0 + 1) // 2
+                    top = max(0, min(top, len(px) - (iy1 - iy0 + 1)))
                     for yy in range(iy0, iy1 + 1):
                         for xx in range(ix0, ix1 + 1):
-                            if orig[yy][xx] != e["bg"]:
+                            if orig[yy][xx] != bg:
                                 px[top + yy - iy0][x + xx - ix0] = orig[yy][xx]
                     x += ix1 - ix0 + 1
                 else:
-                    x = draw_text(layer, part, x, y, g, op["ink"])
+                    if op.get("bold"):
+                        draw_text(layer, part, x + 1, y, g, op["ink"])
+                    x = draw_text(layer, part, x, y, g, op["ink"]) + (1 if op.get("bold") else 0)
         if "outline" in op:
             layer = outline(layer, op["ink"], op["outline"])
             for y, row in enumerate(layer):
                 for x, v in enumerate(row):
                     if v:
                         px[y][x] = v
-    return im, px
+    return px
 
 
 def encode(px, w_tiles, h_tiles, pal=0):
@@ -190,6 +196,8 @@ def render(rom, e):
 
 
 def check(rom, e):
+    if e["kind"] == "pool":
+        return pool_check(rom, e)
     im, px = render(rom, e)
     probs = []
     g = glyphs()
@@ -217,6 +225,8 @@ def check(rom, e):
 
 def insert(rom, e, space):
     """Write new tiles + map for entry e; repoint its descriptor's tile pointer and map slot."""
+    if e["kind"] == "pool":
+        return pool_insert(rom, e, space)
     im, px = render(rom, e)
     tiles, mp = encode(px, im.w, im.h)
     t_at = space.alloc(4 + len(tiles))
@@ -229,6 +239,75 @@ def insert(rom, e, space):
     struct.pack_into("<I", rom, im.mslot, 0x08000000 + m_at)
 
 
+def pool_render(rom, e):
+    """Pool entry {"kind": "pool", "desc", "slots", "count", "bg": 0, "pieces": {"i": {"ops", "icons"}}}
+    -> (Pool, [piece pixels]). Pieces without an entry are re-encoded unchanged."""
+    from pool import Pool
+    p = Pool(rom, int(e["desc"], 16), int(e["slots"], 16), e["count"])
+    out = []
+    for i in range(e["count"]):
+        orig = p.piece_pixels(i)
+        spec = e["pieces"].get(str(i))
+        out.append(run_ops(orig, spec["ops"], spec.get("icons", {}), e["bg"]) if spec else orig)
+    return p, out
+
+
+def pool_encode(p, pieces):
+    """Shared deduped tile block for all pieces -> (tile bytes, [map entries per piece])."""
+    tiles, index, maps = [bytes(32)], {bytes(32): 0}, []
+    for (w, h, _), px in zip(p.pieces, pieces):
+        mp = []
+        for ty in range(h):
+            for tx in range(w):
+                b = bytes(px[ty * 8 + y][tx * 8 + x] | px[ty * 8 + y][tx * 8 + x + 1] << 4
+                          for y in range(8) for x in range(0, 8, 2))
+                if b not in index:
+                    index[b] = len(tiles)
+                    tiles.append(b)
+                mp.append(index[b])
+        maps.append(mp)
+    return b"".join(tiles), maps
+
+
+def pool_check(rom, e):
+    p, pieces = pool_render(rom, e)
+    probs = []
+    g = glyphs()
+    for i, spec in e["pieces"].items():
+        w = p.pieces[int(i)][0] * 8
+        for op in (o for o in spec["ops"] if "text" in o):
+            for ln in op["text"].split("|"):
+                icons = spec.get("icons", {})
+                parts = ICON.split(ln)
+                if set("".join(parts[::2])) - set(g):
+                    probs.append(f"pool {e['desc']} piece {i}: missing glyphs in {ln!r}")
+                    continue
+                lw = sum(icons[q][2] - icons[q][0] + 1 if k % 2 else text_width(q, g) for k, q in enumerate(parts))
+                lw += len(parts[::2]) if op.get("bold") else 0
+                a = op.get("align", "left")
+                lo = op["x"] - (lw // 2 if a == "center" else lw if a == "right" else 0)
+                if lo < 0 or lo + lw > w:
+                    probs.append(f"pool {e['desc']} piece {i}: {ln!r} spans x {lo}..{lo + lw} of {w}")
+    tiles, _ = pool_encode(p, pieces)
+    if len(tiles) // 32 > p.img.size // 32:
+        probs.append(f"pool {e['desc']}: {len(tiles) // 32} tiles > original {p.img.size // 32}")
+    return probs
+
+
+def pool_insert(rom, e, space):
+    p, pieces = pool_render(rom, e)
+    tiles, maps = pool_encode(p, pieces)
+    t_at = space.alloc(4 + len(tiles))
+    struct.pack_into("<I", rom, t_at, len(tiles))
+    rom[t_at + 4:t_at + 4 + len(tiles)] = tiles
+    struct.pack_into("<I", rom, p.img.desc, 0x08000000 + t_at)
+    for slot, (w, h, _), mp in zip(p.slots, p.pieces, maps):
+        m = struct.pack("<HH", w, h) + struct.pack(f"<{len(mp)}H", *mp)
+        m_at = space.alloc(len(m))
+        rom[m_at:m_at + len(m)] = m
+        struct.pack_into("<I", rom, slot, 0x08000000 + m_at)
+
+
 def load_spec(paths=SPECS):
     return [e for p in paths if Path(p).exists() for e in json.loads(Path(p).read_text(encoding="utf-8"))]
 
@@ -237,6 +316,22 @@ def preview(rom, out):
     from PIL import Image as P
     out.mkdir(parents=True, exist_ok=True)
     for e in load_spec():
+        if e["kind"] == "pool":
+            p, pieces = pool_render(rom, e)
+            pal = [p.img.rgb(c) for c in p.img.pals[0]]
+            pal[0] = (40, 40, 90)
+            ims = [P.new("RGB", (len(px[0]), len(px))) for px in pieces]
+            for im_, px in zip(ims, pieces):
+                im_.putdata([pal[v] for row in px for v in row])
+            sel = [int(i) for i in e["pieces"]]
+            H = sum(ims[i].height * 2 + 4 for i in sel)
+            sheet = P.new("RGB", (max(ims[i].width for i in sel) * 2, H))
+            y = 0
+            for i in sel:
+                sheet.paste(ims[i].resize((ims[i].width * 2, ims[i].height * 2), P.NEAREST), (0, y))
+                y += ims[i].height * 2 + 4
+            sheet.save(out / f"pool_{e['desc']}.png")
+            continue
         im, px = render(rom, e)
         pal = [im.rgb(c) for c in im.pals[0]]
         pal[0] = (40, 40, 90)
