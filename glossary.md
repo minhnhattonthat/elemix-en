@@ -4,8 +4,9 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 
 ## Rulings (asked of the user 2026-10-13)
 - Honorifics: kept, hyphenated (Marius-sama). Name order: Japanese. Titles like 王子 / 王 are translated (Prince, King).
-- Romanisation: Hepburn plus judgment. The game borrows Roman history; use the historical English form where the
-  name is clearly one (Gracchus, Teutoburg, Appian Way, Cannae).
+- Romanisation: official in-game spellings first (intro map: Gwuriant, Etrlia, Khanne, Bossporei, Zahher), then
+  Hepburn plus judgment. The game borrows Roman history; use the historical English form where the name is clearly
+  one (Gracchus, Teutoburg, Appian Way).
 - Credits and all graphics text (title logo, intro story images, menus): English.
 - Approval: pre-approved; keep going through phases, report at the end.
 - Abbreviations: none. Full names and terms; prefer engine work (VWF, extra pages) over shortening.
@@ -17,7 +18,7 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 ## Characters
 | JP | EN | notes | Avoid |
 |---|---|---|---|
-| スキップ | Skip | hero, prince of the House of Cannae | |
+| スキップ | Skip | hero, prince of Khanne | |
 | メル | Mel | | |
 | グラックス | Gracchus | King, Skip's father | Grax, Gracks |
 | マリウス | Marius | final boss | |
@@ -30,9 +31,11 @@ Binding for every translator and reviewer. Agents propose additions in reports; 
 ## Places
 | JP | EN | notes | Avoid |
 |---|---|---|---|
+| ガリアント | Gwuriant | the world; official spelling on the intro map | Galliant |
+| エトルリア大陸 | Etrlia continent | official map spelling | Etruria |
+| カンネ / カンネ国 / カンネ王家 | Khanne / Kingdom of Khanne / House of Khanne | official map spelling | Cannae, Kanne |
 | テウトブルグの森 | Teutoburg Forest | | |
 | アッピア街道 | Appian Way | | |
-| カンネ王家 | House of Cannae | royal family | |
 | 冥界 | Underworld | | |
 
 ## Items / magic / terms

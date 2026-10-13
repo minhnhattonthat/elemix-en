@@ -19,7 +19,8 @@ def load_table(path=ROOT / "tbl" / "jp.tbl"):
     for line in Path(path).read_text(encoding="utf-8").splitlines():
         if line and not line.startswith("#"):
             k, _, v = line.partition("=")
-            dec[int(k, 16)] = v
+            dec[int(k, 16)] = "　" if v == r"\s" else v  # editors strip a trailing full-width space
+            assert dec[int(k, 16)], f"empty table value: {line!r}"
     return dec
 
 
