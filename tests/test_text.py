@@ -62,4 +62,4 @@ def test_identity_build(tmp_path, rom):
         e["en"] = ""
     p = tmp_path / "blank.json"
     p.write_text(json.dumps(entries, ensure_ascii=False), encoding="utf-8")
-    assert bytes(build.build(p)) == rom
+    assert bytes(build.build_text(p)) == rom

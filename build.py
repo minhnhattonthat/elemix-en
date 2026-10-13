@@ -1,21 +1,27 @@
-"""Build the English ROM: python -X utf8 build.py [--out build/elemix_en.gba]
+"""Build the English ROM: python -X utf8 build.py  -> build/elemix_en.gba
 
-Entries with an `en` field are encoded, packed into free space and their slot repointed. With no English
-anywhere the output is byte-identical to the original (tests/test_build.py).
+1. Text: entries with an `en` field are encoded, packed into free space and their slot repointed.
+2. Engine (asm/main.asm, armips): VWF dialogue printer + relocated font with English glyphs (tools/font.py).
+With no English and no engine step the output is byte-identical to the original (tests/test_text.py).
 """
-import argparse, struct, sys
+import struct, subprocess, sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "tools"))
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "tools"))
 from codec import Codec, load_table
 from text import ROM, load_script, SCRIPT
+from wrap import wrap
+import font
 
-FREE_LO, FREE_HI = 0x3DB504, 0x400000  # 0xFF padding at the end of the 4 MiB ROM
+OUT = ROOT / "build" / "elemix_en.gba"
+ARMIPS = ROOT / "tools" / "armips" / "armips.exe"
+FREE_LO, FREE_HI = 0x3DB504, 0x3F0000  # 0xFF padding; 0x3F0000+ belongs to asm/main.asm (font, widths, code)
 
 
 class Space:
     def __init__(self, lo, hi):
-        self.pos, self.hi = (lo + 3) & ~3, hi
+        self.pos, self.hi = lo, hi
 
     def alloc(self, n, align=4):
         self.pos = (self.pos + align - 1) & ~(align - 1)
@@ -30,23 +36,38 @@ def insert_text(rom, entries, codec, space):
     for e in entries:
         if not e["en"]:
             continue
-        data = codec.encode(e["en"])
+        data = codec.encode(wrap(e["en"])[0])
         at = space.alloc(len(data), 2)
         rom[at:at + len(data)] = data
         struct.pack_into("<I", rom, int(e["slot"], 16), 0x08000000 + at)
 
 
-def build(script=SCRIPT):
+def build_text(script=SCRIPT):
     rom = bytearray(ROM.read_bytes())
     insert_text(rom, load_script(script), Codec(load_table()), Space(FREE_LO, FREE_HI))
     return rom
 
 
-if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="build/elemix_en.gba")
-    a = ap.parse_args()
-    out = Path(a.out)
+def build(script=SCRIPT, out=OUT):
+    rom = build_text(script)
     out.parent.mkdir(exist_ok=True)
-    out.write_bytes(build())
-    print("wrote", out)
+    fnt, widths = font.build_font(rom)
+    fbin, wbin = out.with_suffix(".font.bin"), out.with_suffix(".widths.bin")
+    fbin.write_bytes(fnt)
+    wbin.write_bytes(widths)
+    out.write_bytes(rom)
+    r = subprocess.run([str(ARMIPS), str(ROOT / "asm" / "main.asm"), "-root", str(ROOT),
+                        "-strequ", "ROMFILE", out.resolve().as_posix(), "-strequ", "FONTBIN", fbin.resolve().as_posix(),
+                        "-strequ", "WIDTHSBIN", wbin.resolve().as_posix()], capture_output=True, text=True)
+    if r.returncode:
+        raise SystemExit("armips failed:\n" + r.stdout + r.stderr)
+    return out
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--script", type=Path, default=SCRIPT)
+    ap.add_argument("--out", type=Path, default=OUT)
+    a = ap.parse_args()
+    print("wrote", build(a.script, a.out))

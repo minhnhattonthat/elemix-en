@@ -14,8 +14,12 @@ END = 0xFFFF
 TOKEN = re.compile(r"\{(n|p|spd|col|at)(?::([0-9A-F]+))?\}|\[([0-9A-F]{4})\]|(.)", re.S)
 
 
-def load_table(path=ROOT / "tbl" / "jp.tbl"):
+def load_table(path=ROOT / "tbl" / "jp.tbl", english=True):
+    """Japanese table plus (english=True) the ASCII glyphs the build adds at font.EN_BASE+."""
     dec = {}
+    if english:
+        from font import en_codes
+        dec.update({code: c for c, code in en_codes().items()})
     for line in Path(path).read_text(encoding="utf-8").splitlines():
         if line and not line.startswith("#"):
             k, _, v = line.partition("=")
