@@ -107,15 +107,3 @@ def render(rom, e):
             else:
                 out[y][x] = idx[y][x]
     return im, out, tpal
-
-
-def encode(px, tpal, wt, ht):
-    tiles, index, mp = [bytes(32)], {bytes(32): 0}, []
-    for ty in range(ht):
-        for tx in range(wt):
-            b = bytes(px[ty * 8 + y][tx * 8 + x] | px[ty * 8 + y][tx * 8 + x + 1] << 4 for y in range(8) for x in range(0, 8, 2))
-            if b not in index:
-                index[b] = len(tiles)
-                tiles.append(b)
-            mp.append(index[b] | (tpal[ty][tx] or 0) << 12)
-    return b"".join(tiles), mp

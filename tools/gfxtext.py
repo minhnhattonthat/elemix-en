@@ -116,13 +116,16 @@ def page(rom, e):
       {"text": "a|b", "x": X, "y": Y, "ink": I, "align": "left|center|right", "pitch": 16, "outline": O}
            x is the left edge, centre or right edge per align; y is the top of the first line's ink;
            {NAME} draws icon NAME = e["icons"][NAME] ([x0, y0, x1, y1] of the ORIGINAL image) inline.
-           outline: draw `ink` and then an 8-neighbour edge in index O (footer labels)."""
+           outline: draw `ink` and then an 8-neighbour edge in index O (footer labels); a list = several rings.
+           pal: palette for every tile the text touches (multi-palette images such as the credits)."""
     im = Image(rom, int(e["desc"], 16))
-    return im, run_ops(pixels(im), e["ops"], e.get("icons", {}), e["bg"])
+    tpal = [[im.map[ty * im.w + tx] >> 12 for tx in range(im.w)] for ty in range(im.h)]
+    return im, run_ops(pixels(im), e["ops"], e.get("icons", {}), e["bg"], tpal), tpal
 
 
-def run_ops(orig, ops, icons, bg):
-    """Apply page ops (see page()) to a copy of orig; icons are rects in orig."""
+def run_ops(orig, ops, icons, bg, tpal=None):
+    """Apply page ops (see page()) to a copy of orig; icons are rects in orig. tpal (tile palettes) is updated
+    for text ops that name a "pal"."""
     px = [r[:] for r in orig]
     g = glyphs()
 
@@ -160,16 +163,32 @@ def run_ops(orig, ops, icons, bg):
                         draw_text(layer, part, x + 1, y, g, op["ink"])
                     x = draw_text(layer, part, x, y, g, op["ink"]) + (1 if op.get("bold") else 0)
         if "outline" in op:
-            layer = outline(layer, op["ink"], op["outline"])
+            rings = op["outline"] if isinstance(op["outline"], list) else [op["outline"]]
+            for ring in rings:
+                layer = outline(layer, op["ink"], ring) if ring == rings[0] else grow(layer, ring)
             for y, row in enumerate(layer):
                 for x, v in enumerate(row):
                     if v:
                         px[y][x] = v
+                        if tpal is not None and "pal" in op:
+                            tpal[y // 8][x // 8] = op["pal"]
     return px
 
 
-def encode(px, w_tiles, h_tiles, pal=0):
-    """Index image -> (tile bytes, map entries). Tile 0 is the blank tile."""
+def grow(px, ink):
+    """One more 8-neighbour ring of `ink` around every non-zero pixel."""
+    h, w = len(px), len(px[0])
+    out = [r[:] for r in px]
+    for y in range(h):
+        for x in range(w):
+            if not px[y][x] and any(0 <= y + dy < h and 0 <= x + dx < w and px[y + dy][x + dx]
+                                    for dy in (-1, 0, 1) for dx in (-1, 0, 1)):
+                out[y][x] = ink
+    return out
+
+
+def encode(px, w_tiles, h_tiles, tpal=None):
+    """Index image -> (tile bytes, map entries). Tile 0 is the blank tile; tpal = palette per tile (default 0)."""
     tiles, index, mp = [bytes(32)], {bytes(32): 0}, []
     for ty in range(h_tiles):
         for tx in range(w_tiles):
@@ -182,28 +201,30 @@ def encode(px, w_tiles, h_tiles, pal=0):
             if b not in index:
                 index[b] = len(tiles)
                 tiles.append(b)
-            mp.append(index[b] | pal << 12)
+            mp.append(index[b] | (tpal[ty][tx] if tpal else 0) << 12)
     return b"".join(tiles), mp
 
 
 def render(rom, e):
-    """-> (Image of the original, index pixels)"""
+    """-> (Image of the original, index pixels, tile palettes or None)"""
     if e["kind"] == "caption":
-        return caption(rom, e)
+        return caption(rom, e) + (None,)
     if e["kind"] == "page":
         return page(rom, e)
+    if e["kind"] == "logo":
+        import logo
+        return logo.render(rom, e)
     raise ValueError(e["kind"])
 
 
 def check(rom, e):
     if e["kind"] == "pool":
         return pool_check(rom, e)
+    im, px, tpal = render(rom, e)
+    n = len(encode(px, im.w, im.h, tpal)[0]) // 32
+    limit = e.get("max_tiles", MAX_TILES.get(e["kind"]))
     if e["kind"] == "logo":
-        import logo
-        im, px, tpal = logo.render(rom, e)
-        n = len(logo.encode(px, tpal, im.w, im.h)[0]) // 32
-        return [f"logo {e['desc']}: {n} tiles > {e['max_tiles']}"] if n > e["max_tiles"] else []
-    im, px = render(rom, e)
+        return [f"logo {e['desc']}: {n} tiles > {limit}"] if n > limit else []
     probs = []
     g = glyphs()
     texts = [e["en"]] if e["kind"] == "caption" else [ICON.sub("", op["text"]) for op in e["ops"] if "text" in op]
@@ -222,9 +243,8 @@ def check(rom, e):
                 lo = op["x"] - (w // 2 if a == "center" else w if a == "right" else 0)
                 if lo < 2 or lo + w > im.w * 8 - 2 or lo + w > op.get("max_x", 999):
                     probs.append(f"{e['desc']}: {ln!r} spans x {lo}..{lo + w}")
-    tiles, _ = encode(px, im.w, im.h)
-    if len(tiles) // 32 > MAX_TILES[e["kind"]]:
-        probs.append(f"{e['desc']}: {len(tiles) // 32} tiles > {MAX_TILES[e['kind']]}")
+    if n > limit:
+        probs.append(f"{e['desc']}: {n} tiles > {limit}")
     return probs
 
 
@@ -232,13 +252,8 @@ def insert(rom, e, space):
     """Write new tiles + map for entry e; repoint its descriptor's tile pointer and map slot."""
     if e["kind"] == "pool":
         return pool_insert(rom, e, space)
-    if e["kind"] == "logo":
-        import logo
-        im, px, tpal = logo.render(rom, e)
-        tiles, mp = logo.encode(px, tpal, im.w, im.h)
-    else:
-        im, px = render(rom, e)
-        tiles, mp = encode(px, im.w, im.h)
+    im, px, tpal = render(rom, e)
+    tiles, mp = encode(px, im.w, im.h, tpal)
     t_at = space.alloc(4 + len(tiles))
     struct.pack_into("<I", rom, t_at, len(tiles))
     rom[t_at + 4:t_at + 4 + len(tiles)] = tiles
@@ -342,19 +357,10 @@ def preview(rom, out):
                 y += ims[i].height * 2 + 4
             sheet.save(out / f"pool_{e['desc']}.png")
             continue
-        if e["kind"] == "logo":
-            import logo
-            im, px, tpal = logo.render(rom, e)
-            img = P.new("RGB", (im.w * 8, im.h * 8))
-            img.putdata([(40, 40, 90) if not v else im.rgb(im.pals[tpal[y // 8][x // 8]][v])
-                         for y, row in enumerate(px) for x, v in enumerate(row)])
-            img.resize((im.w * 24, im.h * 24), P.NEAREST).save(out / f"{e['desc']}.png")
-            continue
-        im, px = render(rom, e)
-        pal = [im.rgb(c) for c in im.pals[0]]
-        pal[0] = (40, 40, 90)
+        im, px, tpal = render(rom, e)
         img = P.new("RGB", (im.w * 8, im.h * 8))
-        img.putdata([pal[v] for row in px for v in row])
+        img.putdata([(40, 40, 90) if not v else im.rgb(im.pals[tpal[y // 8][x // 8] if tpal else 0][v])
+                     for y, row in enumerate(px) for x, v in enumerate(row)])
         img.resize((im.w * 16, im.h * 16), P.NEAREST).save(out / f"{e['desc']}.png")
 
 
