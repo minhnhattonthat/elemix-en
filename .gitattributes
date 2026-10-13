@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.gba binary
+*.bin binary
+*.png binary
+*.bps binary
+*.ips binary
+*.zip binary

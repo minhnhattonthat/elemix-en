@@ -1,0 +1,15 @@
+rom/
+build/
+work/
+dist/
+release/
+tools/mesen2/
+tools/armips/
+tools/mgba/
+*.gba
+*.sav
+*.mss
+*.ss[0-9]
+__pycache__/
+.pytest_cache/
+.claude/skills/
