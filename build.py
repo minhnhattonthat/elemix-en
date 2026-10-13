@@ -36,7 +36,7 @@ def insert_text(rom, entries, codec, space):
     for e in entries:
         if not e["en"]:
             continue
-        data = codec.encode(wrap(e["en"])[0])
+        data = codec.encode(wrap(e["en"], e["jp"])[0])
         at = space.alloc(len(data), 2)
         rom[at:at + len(data)] = data
         struct.pack_into("<I", rom, int(e["slot"], 16), 0x08000000 + at)

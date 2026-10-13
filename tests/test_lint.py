@@ -37,7 +37,7 @@ def test_banned_glyphs():
 
 
 def test_fits_box():
-    probs = {e["id"]: wrap(e["en"])[1] for e in ENTRIES}
+    probs = {e["id"]: wrap(e["en"], e["jp"])[1] for e in ENTRIES}
     assert not {k: v for k, v in probs.items() if v}
 
 

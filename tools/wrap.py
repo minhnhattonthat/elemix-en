@@ -52,6 +52,8 @@ def wrap_page(text, limit=LINE_PX):
     """Wrap one page's text (manual {n} kept as hard breaks). Returns list of lines."""
     out = []
     for para in text.split("{n}"):
+        if not para:
+            continue  # the game ignores {n} at column 0, so empty lines never show
         words = para.split(" ")
         lines = _greedy(words, limit)
         lo = max(width(w) for w in words) if words else 0
@@ -65,10 +67,16 @@ def wrap_page(text, limit=LINE_PX):
     return out
 
 
-def wrap(en):
-    """Full entry text -> (wrapped text with {n}, list of problems)."""
+TAIL = re.compile(r"(\{[np]\})+$")
+
+
+def wrap(en, jp=""):
+    """Full entry text -> (wrapped text with {n}, list of problems). Trailing breaks are taken from jp."""
     m = HEADER.match(en)
     head, body = (m[0], en[m.end():]) if m else ("", en)
+    body = TAIL.sub("", body)
+    t = TAIL.search(jp)
+    tail = t[0] if t else ""
     pages, problems = [], []
     for i, page in enumerate(body.split("{p}")):
         lines = wrap_page(page) if page else []
@@ -79,7 +87,7 @@ def wrap(en):
             if width(ln) > LINE_PX:
                 problems.append(f"page {i + 1}: {width(ln)} px > {LINE_PX}: {ln!r}")
         pages.append("{n}".join(lines))
-    return head + "{p}".join(pages), problems
+    return head + "{p}".join(pages) + tail, problems
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
   "ptr": "02C234",
   "len": 182,
   "jp": "{spd:00}{col:01}メル{col:00}{n}{spd:05}スキップ！　よかった{n}かえってきたのね！{p}{n}とつぜんのことで　びっくり{n}したと思うけど　魔物が{n}攻めてきたの！{p}{n}お城に急いで！{n}王様が　お城にいらっしゃる{n}はずよ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Mel{col:00}{n}{spd:05}Skip! Thank goodness, you're back!{p}I know this is all so sudden, but monsters are attacking us!{p}Hurry to the castle! The King should be there!",
   "notes": ""
  },
  {
@@ -14,7 +14,7 @@
   "ptr": "02C2EA",
   "len": 98,
   "jp": "{spd:00}{col:01}メル{col:00}{n}{spd:05}お城に急いで！{p}{n}あとで　スキップのすきな{n}クリームシチューを{n}つくってあげるね{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Mel{col:00}{n}{spd:05}Hurry to the castle!{p}Later on, I'll make you your favorite cream stew!",
   "notes": ""
  },
  {
@@ -23,7 +23,7 @@
   "ptr": "02C34C",
   "len": 34,
   "jp": "{spd:00}{col:01}メル{col:00}{n}{spd:05}お城に急いで！{p}{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Mel{col:00}{n}{spd:05}Hurry to the castle!",
   "notes": ""
  },
  {
@@ -32,7 +32,7 @@
   "ptr": "02C36E",
   "len": 224,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}魔物に　私たちの家を{n}めちゃくちゃにされました{p}{n}そこの城門も　魔物たちに{n}こわされてしまい　がれきで{n}通れなくなってしまいました{n}そうだ！　王子の{col:01}{at:C}火の魔法{at:1}で{n}がれきを　ふきとばせる{col:00}かも{n}しれません{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}The monsters wrecked our homes!{p}They smashed the castle gate, too. Now the rubble is blocking the way through.{p}Oh, I know! Prince, maybe your {col:01}{at:C}Fire Magic{at:1} could blast away the rubble{col:00}!",
   "notes": ""
  },
  {
@@ -41,7 +41,7 @@
   "ptr": "02C44E",
   "len": 74,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}{at:C}{col:01}火の魔法{col:00}{at:1}で　がれきを{n}こわせるかも　しれませんよ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}Your {at:C}{col:01}Fire Magic{col:00}{at:1} might be able to smash that rubble!",
   "notes": ""
  },
  {
@@ -50,7 +50,7 @@
   "ptr": "02C498",
   "len": 192,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}王子⁉{n}もどってらしたのですか⁉{n}魔物を　城の中には{n}入れさせまいと　したのですが{n}中に入られてしまいました{p}{n}でも　今は　これいじょう{n}入られないように{n}門を　閉めています{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Prince?! You've come back?!{p}We tried to keep the monsters out of the castle, but they got inside.{p}For now, we've shut the gate so no more of them can get in.",
   "notes": ""
  },
  {
@@ -59,7 +59,7 @@
   "ptr": "02C558",
   "len": 138,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}お城の門は　{col:01}鍵{col:00}がなければ{n}開けられません{p}{n}{col:01}鍵{col:00}は　門番が{n}持っているのですが　魔物に{n}氷づけにされてしまいました{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}The castle gate can't be opened without the {col:01}key{col:00}.{p}The gatekeeper has the {col:01}key{col:00}, but the monsters froze him solid.",
   "notes": ""
  },
  {
@@ -68,7 +68,7 @@
   "ptr": "02C5E2",
   "len": 64,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}{col:01}氷を　こわせれば{col:00}{n}助けられるのですが、、、{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}If only we could {col:01}break the ice{col:00}, we could save him...",
   "notes": ""
  },
  {
@@ -77,7 +77,7 @@
   "ptr": "02C622",
   "len": 312,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}この橋も　魔物に{n}こわされてしまいました{p}{n}そうだ　王子に　いいことを{n}教えます。うちの　じいさんが{n}言ってたのですがね{p}{n}王子の使う　{col:01}魔法{col:00}は{n}便利なことが　できるそうです{p}{n}{col:01}{at:C}火の魔法{at:1}は　物をこわし{n}{at:D}氷の魔法{at:1}は　水をこおらせ{n}{at:E}土の魔法{at:1}は　重い物を動かす{col:00}{p}{n}って　言ってました{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}The monsters smashed this bridge, too.{p}Oh, right! Let me tell you something good, Prince. My old grandpa used to say this...{p}The {col:01}magic{col:00} you use can do all sorts of handy things.{p}{col:01}{at:C}Fire Magic{at:1} breaks things, {at:D}Ice Magic{at:1} freezes water, and {at:E}Earth Magic{at:1} moves heavy objects{col:00}.{p}That's what he told me.",
   "notes": ""
  },
  {
@@ -86,7 +86,7 @@
   "ptr": "02C75A",
   "len": 78,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}そこの石像を　{col:01}{at:E}土の魔法{at:1}で{n}動かせる{col:00}かも　しれませんよ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}That stone statue... You might {col:01}move it with {at:E}Earth Magic{at:1}{col:00}!",
   "notes": ""
  },
  {
@@ -95,7 +95,7 @@
   "ptr": "02C7A8",
   "len": 284,
   "jp": "{spd:00}{col:01}門番{col:00}{n}{spd:05}、、、はっ！{n}私は　何を　していたんだ{p}{n}王子⁉　王子が{n}助けてくださったのですか？{n}ありがとうございます{p}{n}門の{col:01}鍵{col:00}　ですか？{n}はい　私が持っています{p}{n}お城の中に　行くのですね{n}わかりました　今開けます{p}{n}王子！{n}王様を　お願いします{n}くれぐれも　気をつけて！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Gatekeeper{col:00}{n}{spd:05}...Huh?! What was I doing?{p}Prince?! Did you rescue me? Thank you so much!{p}The gate {col:01}key{col:00}? Yes, I have it right here.{p}You're going into the castle? Understood. I'll open it now.{p}Prince! Please save the King! And do be careful!",
   "notes": ""
  },
  {
@@ -104,7 +104,7 @@
   "ptr": "02C8C4",
   "len": 36,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}　　キャーーーー‼{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}Eeeeeeek!!",
   "notes": ""
  },
  {
@@ -113,7 +113,7 @@
   "ptr": "02C8E8",
   "len": 46,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}　　ウワーー、魔物だーーー‼{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}Waaah! M-monsterrrs!!",
   "notes": ""
  },
  {
@@ -122,7 +122,7 @@
   "ptr": "02C916",
   "len": 68,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}くっ{spd:09}　{spd:00}魔物め！{n}{spd:03}オ{spd:00}レの剣が　きかないとは！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Ngh{spd:09} {spd:00}Blasted monster!{n}{spd:03}M{spd:00}y sword won't even scratch it!",
   "notes": ""
  },
  {
@@ -131,7 +131,7 @@
   "ptr": "02C95A",
   "len": 20,
   "jp": "あっ！{spd:09}　王子！{n}",
-  "en": "",
+  "en": "Ah!{spd:09} Prince!",
   "notes": ""
  },
  {
@@ -140,7 +140,7 @@
   "ptr": "02C96E",
   "len": 92,
   "jp": "よくぞ　もどってこられました{p}{n}城が　魔物に{n}攻められています{n}城へ　おいそぎください！{n}",
-  "en": "",
+  "en": "You made it back!{p}The monsters are attacking the castle! Please hurry to the castle!",
   "notes": ""
  },
  {
@@ -149,7 +149,7 @@
   "ptr": "02CA1C",
   "len": 196,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}城内は　魔物に　せんりょう{n}されてしまいました{p}{n}玉座の間へ　行くには{n}２かいにある　かいだんを{n}おつかいください{p}{n}ここから　２かいに　上がり{n}左に進めば　かいだんが{n}あります{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}The monsters have taken over the castle.{p}To reach the throne room, use the stairs on the second floor.{p}Go up to the second floor from here and head left, and you'll find the stairs.",
   "notes": ""
  },
  {
@@ -158,7 +158,7 @@
   "ptr": "02CAE0",
   "len": 48,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}かいだんは　２かいに{n}あります{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}The stairs are on the second floor.",
   "notes": ""
  },
  {
@@ -167,7 +167,7 @@
   "ptr": "02CB10",
   "len": 148,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}玉座の間へは　城のまん中の{n}{col:01}ししのとびら{col:00}から　行けます{n}{col:01}ししのとびら{col:00}は{n}とびらのよこの　{col:01}スイッチ{col:00}を{n}おせば　ひらきます{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}The throne room is through the {col:01}Lion Door{col:00} in the middle of the castle.{p}The {col:01}Lion Door{col:00} opens when you press the {col:01}switch{col:00} beside it.",
   "notes": ""
  },
  {
@@ -176,7 +176,7 @@
   "ptr": "02CBA4",
   "len": 112,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}{col:01}スイッチ{col:00}は　王子が上に{n}のるか{p}{n}王子の　{col:01}{at:E}土の魔法{at:1}{col:00}で{n}つくりだせる岩でも　おせます{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}You can press the {col:01}switch{col:00} by standing on it,{p}or push it with a boulder made by your {col:01}{at:E}Earth Magic{at:1}{col:00}, Prince.",
   "notes": ""
  },
  {
@@ -185,7 +185,7 @@
   "ptr": "02CC14",
   "len": 130,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}通路の出口は　おくと{n}とちゅうの　ふたつあります{p}{n}おおひろ間へは　炎に{n}つき当たったら　右に行けば{n}出られます{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}This passage has two exits: one at the far end, and one partway along.{p}To get out to the great hall, turn right when you run into the flames.",
   "notes": ""
  },
  {
@@ -194,7 +194,7 @@
   "ptr": "02CC96",
   "len": 64,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}おおひろ間から　玉座の間へ{n}行くことができます{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}From the great hall, you can get to the throne room.",
   "notes": ""
  },
  {
@@ -203,7 +203,7 @@
   "ptr": "02CCD6",
   "len": 118,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}このかくし通路は{n}玉座の間の前まで　行けます{p}{n}でも　出口で炎が{n}じゃまをしているので{n}でられません{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}This secret passage leads right up to the throne room.{p}But flames are blocking the exit, so you can't get out that way.",
   "notes": ""
  },
  {
@@ -212,7 +212,7 @@
   "ptr": "02CD4C",
   "len": 144,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}その手前にある　おおひろ間に{n}ぬける通路なら　通れます{p}{n}{col:01}右側の壁が　へこんでいる{n}ところ{col:00}を　左にまっすぐ{n}進んでください{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}But the passage to the great hall just before it is open.{p}Where {col:01}the wall on the right is recessed{col:00}, head straight to the left.",
   "notes": ""
  },
  {
@@ -221,7 +221,7 @@
   "ptr": "02CDDC",
   "len": 72,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}{col:01}右の壁が　へこんでいる{n}ところ{col:00}を　左に進むんですよ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Where {col:01}the right wall is recessed{col:00}, head to the left!",
   "notes": ""
  },
  {
@@ -230,7 +230,7 @@
   "ptr": "02CE24",
   "len": 170,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}王子{spd:09}　{spd:02}魔物たちは{n}玉座の間に　むかっています！{n}玉座の間へは　城のおくにある{n}とびらから　行けます{p}{n}王子も　急いで　玉座の間へ{n}向かってください！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Prince!{spd:09} {spd:02}The monsters are heading for the throne room!{p}You can reach the throne room through the door at the back of the castle.{p}Please hurry to the throne room, too!",
   "notes": ""
  },
  {
@@ -239,7 +239,7 @@
   "ptr": "02CF20",
   "len": 294,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}このかいだんを　上れば{n}玉座まですぐです{p}{n}玉座の前に　魔物が{n}たくさん　あつまっています{p}{n}王子の魔法で　ぜんぶ{n}たおしてください‼{p}{n}それと　もうしっている{n}とは思いますが　{col:01}へんしん中は{n}無敵{col:00}に　なります{p}{n}無敵時間を　うまく使えば{n}敵をかんたんに　倒せると{n}思います{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Climb these stairs, and the throne is right there.{p}A horde of monsters has gathered in front of the throne.{p}Defeat them all with your magic, Prince!!{p}And you may know this already, but {col:01}while transformed, you're invincible{col:00}.{p}If you make good use of that invincibility, you should beat the enemies easily.",
   "notes": ""
  },
  {
@@ -248,7 +248,7 @@
   "ptr": "02D046",
   "len": 294,
   "jp": "我が名は　へリス{p}{n}冥界の騎士を　統べる長にて{n}我が主マリウスの{n}第１の僕なり{p}{n}誰かと思えば　グラックス王の{n}息子か、、、{n}む　その腕にあるのは！{p}{n}こんな子供が{n}持っているとはな{n}探す手間が　はぶけたわ{p}{n}貴様が持っている　その腕輪{n}力ずくでも　渡してもらうぞ{p}{n}手加減はせぬ{n}ゆくぞ！{n}",
-  "en": "",
+  "en": "My name is Heris.{p}Commander of the Knights of the Underworld, and first servant of my master, Marius.{p}And who might you be? The son of King Gracchus... Hm? That, on your arm!{p}To think a mere child would carry it. You've saved me the trouble of searching.{p}That bracelet you wear... I will have it, by force if need be.{p}I will show no mercy. Here I come!",
   "notes": ""
  },
  {
@@ -257,7 +257,7 @@
   "ptr": "02D16C",
   "len": 212,
   "jp": "{spd:00}{col:01}へリス{col:00}{n}{spd:05}ここまで腕輪の力を　使いこ{n}なすとは、、、油断したか{n}グラックス王は{n}マリウス様の　ところにいる{p}{n}王を返して欲しくば{n}貴様ひとりで　マリウス様の{n}もとへ行くんだな、、、{p}{n}地獄で会おう、、、{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Heris{col:00}{n}{spd:05}To wield the bracelet's power this well... I was careless.{p}King Gracchus is with Marius-sama. If you want your king back, go to Marius-sama alone...{p}We shall meet again in Hell...",
   "notes": ""
  },
  {
@@ -266,7 +266,7 @@
   "ptr": "02D290",
   "len": 166,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}この先にある橋が　魔物に{n}こわされちまったんだよ{n}どうやって　川をわたれば{n}いいんだろうかね{p}{n}そうだ　{col:01}川をこおらせれば{col:00}{n}わたれるんじゃないかね{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}The monsters went and wrecked the bridge up ahead.{p}How on earth are we supposed to get across the river now?{p}Oh, I know! Couldn't you get across if you {col:01}froze the river{col:00}?",
   "notes": ""
  },
  {
@@ -275,7 +275,7 @@
   "ptr": "02D336",
   "len": 78,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}これじゃ　となり街に{n}行けないじゃないか{p}{n}こまったもんだね{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}Now we can't even get to the next town!{p}What a fine mess this is.",
   "notes": ""
  },
  {
@@ -284,7 +284,7 @@
   "ptr": "02D384",
   "len": 34,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}こまったもんだね{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}What a fine mess this is.",
   "notes": ""
  },
  {
@@ -293,7 +293,7 @@
   "ptr": "02D3A6",
   "len": 212,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}ここから　東に進めば{n}テウトブルグの森よ{p}{n}ただね　とちゅうの{n}水たまりから　どろの魔物が{n}出るから　気をつけんだよ{n}やつらは　体がどろと水で{n}できてるから　{col:01}こおらせれば{n}{col:00}いいんじゃないかね{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}Head east from here, and you'll reach Teutoburg Forest.{p}But mind you, mud monsters crawl out of the puddles along the way, so be careful.{p}Their bodies are made of mud and water, so maybe you could {col:01}freeze them{col:00}?",
   "notes": ""
  },
  {
@@ -302,7 +302,7 @@
   "ptr": "02D47A",
   "len": 80,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}さて　あたしはこれから{n}どうやってかえろうかね{n}気をつけるのよ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}Well now, how am I going to get home? You take care, dear.",
   "notes": ""
  },
  {
@@ -311,7 +311,7 @@
   "ptr": "02D4CA",
   "len": 32,
   "jp": "{spd:00}{col:01}町人{col:00}{n}{spd:05}気をつけるのよ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Townsperson{col:00}{n}{spd:05}You take care, dear.",
   "notes": ""
  },
  {
@@ -320,7 +320,7 @@
   "ptr": "02D4EA",
   "len": 264,
   "jp": "{spd:00}{col:01}兵士{col:00}{n}{spd:05}王子{n}本当に行くのですね{p}{n}情報によると　魔物たちは{n}この先にある　テウトブルグの{n}森から　出てきたそうです{p}{n}森へは　このアッピア街道を{n}東へまっすぐ進めば{n}着けるはずです{p}{n}私は　城のけいびが{n}ありますので　もどります{n}くれぐれも　気をつけて{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Soldier{col:00}{n}{spd:05}Prince, are you really going?{p}Our reports say the monsters came out of Teutoburg Forest, just up ahead.{p}If you follow the Appian Way straight east, you should reach the forest.{p}I must go back and guard the castle. Please, be careful.",
   "notes": ""
  },
  {
@@ -329,7 +329,7 @@
   "ptr": "02D644",
   "len": 216,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}この用水路は　水門が閉じて{n}いるから　かれているんじゃ{n}{col:01}水門を　あけることが{n}できれば{col:00}　水路に水をみたせ{n}るじゃろ{p}{n}たしか　{col:01}水門の近くに{n}水門を　あけるための{n}スイッチ部屋{col:01}があったかの{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}This canal has run dry because the floodgate is shut.{p}If you can {col:01}open the floodgate{col:00}, the water will fill the canal.{p}If memory serves, {col:01}there was a switch room near the floodgate{col:00} for opening it...",
   "notes": ""
  },
  {
@@ -338,7 +338,7 @@
   "ptr": "02D71C",
   "len": 72,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}水門近くの　スイッチ部屋で{n}水門をあけられるじゃろ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}You can open the floodgate from the switch room near it.",
   "notes": ""
  },
  {
@@ -347,7 +347,7 @@
   "ptr": "02D764",
   "len": 338,
   "jp": "まっておったぞ　スキップ王子{n}わしは　この森の番人{n}ふくろうの　フーロクじゃ{p}{n}おまえさんの　{n}ご先祖様たちには{n}せわになっての{p}{n}カンネ王家のことなら{n}なんでもしっておる。もちろん{n}グラックス王に　ついてもな{n}グラックス王は　森をぬけた{n}ところの　地下いせきに{n}とらわられておる{p}{n}森をぬけるには　北東にある{n}出口に　向かうのじゃ{p}{n}",
-  "en": "",
+  "en": "I've been waiting for you, Prince Skip. I am the keeper of this forest, Furoku the owl.{p}Your ancestors were very good to me.{p}I know all there is to know about the House of Khanne. And about King Gracchus, of course.{p}King Gracchus is held captive in the underground ruins beyond the forest.{p}To get through the forest, head for the exit to the northeast.",
   "notes": ""
  },
  {
@@ -356,7 +356,7 @@
   "ptr": "02D908",
   "len": 26,
   "jp": "　　ゴゴゴゴゴ、、、！{n}",
-  "en": "",
+  "en": "Rumble rumble rumble...!",
   "notes": ""
  },
  {
@@ -365,7 +365,7 @@
   "ptr": "02D922",
   "len": 28,
   "jp": "　　ザザァァーー、、、！{n}",
-  "en": "",
+  "en": "Whoooosh...!",
   "notes": ""
  },
  {
@@ -374,7 +374,7 @@
   "ptr": "02D990",
   "len": 210,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}このパズルを解けば{n}地下いせきの　入口に出るぞよ{n}{col:01}すべての魔法ブロックを{n}魔法陣パネルの{n}上におく{col:00}のじゃ{p}{n}ブロックのいちを{n}{col:01}元にもどすには　入口にある{n}せきばんを　しらべる{col:00}のじゃ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}Solve this puzzle to reach the entrance to the underground ruins.{p}{col:01}Put every magic block on a magic circle panel{col:00}.{p}To {col:01}put the blocks back where they started, examine the stone tablet at the entrance{col:00}.",
   "notes": ""
  },
  {
@@ -383,7 +383,7 @@
   "ptr": "02DA62",
   "len": 158,
   "jp": "{spd:00}{col:01}フーロク{col:00}{n}{spd:05}{col:01}すべての　魔法ブロックを{n}魔法陣パネルの上におく{col:00}のじゃ{n}ブロックのいちを{n}{col:01}元にもどすには　入口にある{n}せきばんを　しらべる{col:00}のじゃ{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Furoku{col:00}{n}{spd:05}{col:01}Put every magic block on a magic circle panel{col:00}.{p}To {col:01}put the blocks back where they started, examine the stone tablet at the entrance{col:00}.",
   "notes": ""
  },
  {
@@ -392,7 +392,7 @@
   "ptr": "02DB00",
   "len": 258,
   "jp": "たける魂は{n}　　　　凍てつく命をうみ{p}{n}凍てつく命は{n}　　　姿なき旅人にそだち{p}{n}姿なき旅人は{n}　　　豊かな大地へとかえり{p}{n}豊かな大地は{n}　　　　たける魂を宿す{p}{n}力をただしき場所へ　みちびく{n}ことができる者には　封印の地{n}への　とびらが　ひらくだろう{n}",
-  "en": "",
+  "en": "The raging soul gives birth to frozen life.{p}Frozen life grows into the formless traveler.{p}The formless traveler returns to the bountiful earth.{p}The bountiful earth harbors the raging soul.{p}To one who can guide the power to its rightful place, the door to the sealed land shall open.",
   "notes": ""
  },
  {
@@ -401,7 +401,7 @@
   "ptr": "02DC02",
   "len": 92,
   "jp": "力をただしき場所へ　みちびく{n}ことができる者には　封印の地{n}への　とびらが　ひらくだろう{n}",
-  "en": "",
+  "en": "To one who can guide the power to its rightful place, the door to the sealed land shall open.",
   "notes": ""
  },
  {
@@ -410,7 +410,7 @@
   "ptr": "02DCB0",
   "len": 302,
   "jp": "おっそーい！　まったく{n}こんなさむいところに{n}何時間またせるのよ！{p}{n}あたしは　妖精のシロップ{n}グラックス王に呼び出された{n}あんたの　道案内役よ{p}{n}はやく　グラックス王が{n}つかまっている　地下いせきに{n}行きましょう{p}{n}ここを　まっすぐ進むと{n}氷の体をした　おっきな魔物が{n}いるから　そいつを倒してね{n}",
-  "en": "",
+  "en": "You're sooo late! Honestly! Making me wait for hours in a freezing place like this!{p}I'm Syrup the fairy! King Gracchus summoned me to be your guide.{p}Come on, let's hurry to the underground ruins where King Gracchus is being held!{p}Straight ahead there's a great big monster with a body of ice, so go beat it!",
   "notes": ""
  },
  {
@@ -419,7 +419,7 @@
   "ptr": "02DDDE",
   "len": 260,
   "jp": "我が名は　タロス{n}凍てつく　はがねを{n}つかさどる王にて　我が主{n}マリウスの　第２の僕なり、、{n}その腕にあるのは、、、！{n}へリスめしくじったか{p}{n}その腕輪を　渡さぬかぎり{n}ここから先へは　進ません！{p}{n}ひさしぶりの　きゃくじんよ{n}たのしませてくれよ{n}ゆくぞ！{n}",
-  "en": "",
+  "en": "My name is Talos. King who rules over freezing steel, and second servant of my master, Marius...{p}That, on your arm...! So Heris has failed.{p}Unless you hand over that bracelet, you shall go no further!{p}It has been long since I last had a guest. Entertain me well! Here I come!",
   "notes": ""
  },
  {
@@ -428,7 +428,7 @@
   "ptr": "02DEE2",
   "len": 180,
   "jp": "{spd:00}{col:01}タロス{col:00}{n}{spd:05}これほどまでに{n}強いとは、、、！{p}{n}そこの魔法陣で　地下いせきに{n}進めるはずだ{p}{n}だが　さらなるしれんが{n}貴様をまちうけるだろう{p}{n}生きてはもどれぬぞ、、、！{p}{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Talos{col:00}{n}{spd:05}To think you were this strong...!{p}That magic circle there should take you on into the underground ruins.{p}But even greater trials await you there.{p}You will not return alive...!",
   "notes": ""
  },
  {
@@ -437,7 +437,7 @@
   "ptr": "02DF96",
   "len": 44,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}気あい入れて行くわよ！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}Come on, let's give it everything we've got!",
   "notes": ""
  },
  {
@@ -446,7 +446,7 @@
   "ptr": "02E014",
   "len": 262,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}ヨウガンは　氷の魔法で　{n}こおらせることができるわ{p}{n}あの魔物の　口のなかの{n}スイッチをおせば{n}先にすすめるはずよ{p}{n}魔物の口を　どうやって{n}あけるかなのよね、、、{p}{n}そこにある　ふたつの{n}スイッチが　あたしは　{n}あやしいと　にらんでるわ{p}{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}You can freeze the lava with Ice Magic.{p}If you press the switch inside that monster's mouth, we should be able to go on.{p}The question is how to get its mouth open...{p}If you ask me, those two switches over there look awfully suspicious.",
   "notes": ""
  },
  {
@@ -455,7 +455,7 @@
   "ptr": "02E11A",
   "len": 280,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}ここが　はるか昔にさかえた{n}ぶんめいの　いせきよ{p}{n}ここから　下方向に進んだ{n}ところにある　大きな{n}かいだんまで行くのよ{p}{n}とちゅう　道がとぎれたり{n}してるけど　あたま使って{n}進むのよ{p}{n}それじゃ　あたしは{n}一足先に行ってるから{p}{n}がんばって　きなさいよー！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}These are the ruins of a civilization that flourished long, long ago.{p}From here, head downward until you reach a big staircase.{p}The path breaks off in places, so use your head to get through.{p}Well then, I'll go on ahead.{p}Do your best, OK?!",
   "notes": ""
  },
  {
@@ -464,7 +464,7 @@
   "ptr": "02E284",
   "len": 178,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}やっと　いせきのちゅうしんに{n}ついたわ{p}{n}この奥に　ようがんの体をした{n}大きな魔物がいるから{n}倒してね{p}{n}あと　もう少しだから{n}気あい入れて　がんばるのよ！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}We finally made it to the heart of the ruins!{p}Further in, there's a great big monster with a body of lava, so go beat it!{p}Just a little more to go! Give it everything you've got!",
   "notes": ""
  },
  {
@@ -473,7 +473,7 @@
   "ptr": "02E336",
   "len": 242,
   "jp": "我が名は　テュポン{p}{n}しゃくねつの　ちしおを{n}つかさどる王にて　我が主{n}マリウスの　第３の僕なり、、{n}こんな子供に　あのふたりが{n}まけるとは　どうしたことか{p}{n}だが　我もおなじように{n}倒せると思うなよ{p}{n}地獄に　おちるのは貴様だ{n}ゆくぞ！{n}",
-  "en": "",
+  "en": "My name is Typhon.{p}King who rules over searing blood, and third servant of my master, Marius...{p}How could those two have lost to a mere child like you?{p}But do not think you can defeat me the same way.{p}It is you who shall fall into Hell! Here I come!",
   "notes": ""
  },
  {
@@ -482,7 +482,7 @@
   "ptr": "02E428",
   "len": 242,
   "jp": "{spd:00}{col:01}テュポン{col:00}{n}{spd:05}子供と　あなどったときから{n}我のまけは決まっていたのか⁉{n}我のまけだ{n}この先に進むがよい{p}{n}だが　マリウス様は　お強い{n}たとえ貴様でも　マリウス様の{n}前に　ひざまずくだろう{p}{n}奥の魔法陣から{n}マリウス様のもとへ行くがよい{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Typhon{col:00}{n}{spd:05}Was my defeat sealed the moment I took you for a mere child?!{p}I am beaten. Go on ahead.{p}But Marius-sama is strong. Even you will kneel before Marius-sama.{p}Go to Marius-sama through the magic circle in the back.",
   "notes": ""
  },
  {
@@ -491,7 +491,7 @@
   "ptr": "02E56C",
   "len": 350,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}さあ　いよいよ{n}マリウスとの決戦よ{p}{n}マリウスは　長い間封印{n}されていたけれど　ものすごい{n}魔力を　持っているからね{p}{n}それに{n}{col:01}風のエレメンタルリング{col:00}も{n}持っているんだから{p}{n}ちょっとでも　ゆだんすると{n}イタイめを　見るわよ！{p}{n}マリウスを倒して　王様を助け{n}風のエレメンタルリングも{n}とりあげちゃおう！{p}{n}さぁ　行くわよ！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}Well, here it is at last: the final battle with Marius!{p}Marius was sealed away for a long time, but he has tremendous magic power.{p}And he has the {col:01}Wind Elemental Ring{col:00}, too!{p}If you let your guard down even a little, you're going to get hurt!{p}Let's beat Marius, save the King, and take the Wind Elemental Ring off him!{p}Come on, let's go!",
   "notes": ""
  },
  {
@@ -500,7 +500,7 @@
   "ptr": "02E6CA",
   "len": 342,
   "jp": "我が名は　マリウス{p}{n}ついに　力のふっかつの{n}日がきたか、、、{p}{n}あとは　貴様の持つリングを{n}我が持つリングと{n}あわせるのみ{p}{n}さすれば　我は{n}ゆいつむにの　魔力を{n}手に入れられる{p}{n}その前に　カンネ王家の{n}人間を　ちまつりにあげると{n}するか、、、{p}{n}我を　封印した貴様の{n}祖先アスラ。５００ねん前の{n}うらみ　今こそはらさん！{p}{n}ゆくぞ‼{n}",
-  "en": "",
+  "en": "My name is Marius.{p}At last, the day my power is restored has come...{p}All that remains is to join the Ring you carry with the Ring I hold.{p}Then I shall possess magic power without equal.{p}But first, I shall offer up a member of the House of Khanne as a blood sacrifice...{p}Your ancestor Asura sealed me away. Now I shall avenge 500 years of hatred!{p}Here I come!!",
   "notes": ""
  },
  {
@@ -509,7 +509,7 @@
   "ptr": "02E820",
   "len": 156,
   "jp": "{spd:00}{col:01}マリウス{col:00}{n}{spd:05}な　なに、、、！{n}我がまけたのか、、、⁉{p}{n}あと少しで　かんぜんな{n}力を　手に入れられた{n}はずが、、、！{p}{n}なぜ　我がまける、、、⁉{p}{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Marius{col:00}{n}{spd:05}Wh-what...?! I have been defeated...?!{p}I was so close to obtaining my full power...!{p}Why... Why have I lost...?!",
   "notes": ""
  },
  {
@@ -518,7 +518,7 @@
   "ptr": "02E8BC",
   "len": 354,
   "jp": "{spd:00}{col:01}グラックス{col:00}{n}{spd:05}リングが　おまえを{n}こばんだのだよ　マリウス{p}{n}いかに　おまえの魔力が{n}強かろうと　リングは使い{n}こなせなかったのだよ{p}{n}あしき力では　リングの{n}本当の力は　ひきだせないのだ{p}{n}もう　このよでリングを{n}使いこなせるのは{n}スキップだけなのだよ{p}{n}{spd:00}{col:01}マリウス{col:00}{n}我は　リングを使いこなして{n}いなかったとは、、、{p}{n}さらばだ、、、！{p}{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Gracchus{col:00}{n}{spd:05}The Ring rejected you, Marius.{p}However great your magic power, you could never truly master the Ring.{p}Evil power cannot draw out the Ring's true power.{p}In all this world, only Skip can master the Ring now.{p}{spd:00}{col:01}Marius{col:00}{n}{spd:05}So I never truly mastered the Ring...{p}Farewell...!",
   "notes": ""
  },
  {
@@ -527,7 +527,7 @@
   "ptr": "02EA1E",
   "len": 50,
   "jp": "{spd:00}{col:01}シロップ{col:00}{n}{spd:05}ついに　おわったのね、、、{p}{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Syrup{col:00}{n}{spd:05}It's finally over...",
   "notes": ""
  },
  {
@@ -536,7 +536,7 @@
   "ptr": "02EA50",
   "len": 86,
   "jp": "{spd:00}{col:01}グラックス{col:00}{n}{spd:05}さぁ　かえろう{p}{n}我らの　かえりをまつ{n}たみのところへ、、、！{n}",
-  "en": "",
+  "en": "{spd:00}{col:01}Gracchus{col:00}{n}{spd:05}Now, let us go home.{p}To our people, who await our return...!",
   "notes": ""
  }
 ]
