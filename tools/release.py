@@ -3,11 +3,12 @@
 check -> build -> smoke boot -> leftover-Japanese scan (dialogue slots) -> BPS (re-applied and verified by bps.py)
 -> dist/Elemix_EN_v<ver>.zip holding the patch and README.txt only. Stops at the first failure. Never publishes.
 """
-import argparse, hashlib, subprocess, sys, zipfile, zlib
+import argparse, hashlib, os, subprocess, sys, zipfile, zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKILL = ROOT / ".agents" / "skills" / "translate-retro-game" / "scripts"
+# skill ships as the translate-retro-game@retro-translation plugin; $SKILL overrides
+SKILL = Path(os.environ.get("SKILL", Path.home() / ".claude/plugins/marketplaces/retro-translation/skills/translate-retro-game")) / "scripts"
 ORIG = ROOT / "rom" / "Elemix! (Japan).gba"
 BUILT = ROOT / "build" / "elemix_en.gba"
 PY = [sys.executable, "-X", "utf8"]

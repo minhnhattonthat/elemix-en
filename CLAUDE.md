@@ -1,6 +1,6 @@
 # Elemix! (GBA) English translation
 
-Skill: translate-retro-game (H:/translation/elemix/rom/.agents/skills/translate-retro-game/SKILL.md). Read it before ROM, text or QA work. `$SKILL` below = that directory.
+Skill: translate-retro-game, from the plugin translate-retro-game@retro-translation (~/.claude/plugins/marketplaces/retro-translation/skills/translate-retro-game/SKILL.md). Read it before ROM, text or QA work. `$SKILL` below = that directory.
 
 ## Commands (run from repo root)
 - Build:    `python -X utf8 build.py`              -> build/elemix_en.gba (8 MiB; text + VWF asm + graphics)
