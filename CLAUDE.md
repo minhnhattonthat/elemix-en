@@ -22,6 +22,7 @@ Skill: translate-retro-game, from the plugin translate-retro-game@retro-translat
 - Honorifics kept, hyphenated; JP name order. Official map spellings (Gwuriant, Etrlia, Khanne), else Hepburn + judgment. All graphics and credits English. No abbreviations. Pre-approved: keep going, report at end.
 - Mesen keeps .sav files between runs: always pass `--sav work/saves/blank.sav` (or village.sav) or menus shift.
 - `< > * @` draw ◀ ▶ × © in the VWF font: lint bans them in dialogue.
+- Player bug reports: GitHub issues (`gh issue list --label bug`). Copy the attached save into `work/states/`, reproduce in the emulator, fix, commit with `Fixes #N`, and update the Status section.
 
 ## Status (2026-10-13)
 - Done: all 60 dialogue entries (reviewed), intro/ending captions, tutorial, options/records/erase, pause, save confirm, time-attack prompt, title logo, staff roll. Every dialogue page checked in game via tools/lua/gallery.lua; v1.0 release zip built and verified (not published).

@@ -7,6 +7,9 @@ that build the patch.
 your own dump, `Elemix! (Japan).gba` (4,194,304 bytes, CRC32 FA28BED8). The release README lists the hashes and
 patching steps. The patched ROM is 8 MiB.
 
+**Found a bug?** [Report it](../../issues/new/choose): untranslated text, typos, overflow, crashes. Attaching a savestate
+helps most.
+
 ## What is translated
 All dialogue, the intro and ending, the tutorial, menus, options, records, the pause and save screens, the title logo
 and the staff roll.
