@@ -26,5 +26,6 @@ Skill: translate-retro-game, from the plugin translate-retro-game@retro-translat
 
 ## Status (2026-10-13)
 - Done: all 60 dialogue entries (reviewed), intro/ending captions, tutorial, options/records/erase, pause, save confirm, time-attack prompt, title logo, staff roll. Every dialogue page checked in game via tools/lua/gallery.lua; v1.0 release zip built and verified (not published).
+- 2026-10-26: #1 fixed: bold (`{col:01}`) glyphs touched; VWF and wrap now add 1 px per bold glyph.
 - Not seen in game: time-attack and expert-mode screens (need a cleared save); result screen after a real stage clear.
 - Open questions for the user: credit line in README, blanked score unit, dropped logo emblem.

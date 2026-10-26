@@ -30,11 +30,16 @@ CODE      equ 0x083F4E80
 	.incbin WIDTHSBIN
 
 .org CODE
-vwf_advance:                      ; r0 = [r5+0x15] + width[r6]; may clobber r1
+vwf_advance:                      ; r0 = [r5+0x15] + width[r6] (+1 if bold); may clobber r1
 	ldr r1, =WIDTHS
 	ldrb r1, [r1, r6]
 	ldrb r0, [r5, #0x15]
 	add r0, r0, r1
+	ldrb r1, [r5, #0x12]              ; 3xxx style: nonzero = bold, drawn 1 px wider (shadow at x+1)
+	cmp r1, #0
+	beq @@done
+	add r0, #1
+@@done:
 	bx lr
 .pool
 
