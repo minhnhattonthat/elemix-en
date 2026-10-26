@@ -8,7 +8,8 @@
 - Control words (handler jump table at `0x0801841C`, top nibble 1-5):
   - `1xxx` newline (only `1000` seen)
   - `2xxx` text speed, low byte (`2000` instant, `2005` normal, `2009` pause)
-  - `3xxx` colour, low byte (`3001` highlight: name tag, key words; `3000` normal)
+  - `3xxx` style, low byte -> `[win+0x12]` (`3001` bold: name tag, key words, drawn with a 1 px shadow at x+1,
+    so the VWF advances 1 px more per glyph; `3000` normal)
   - `4xxx` wait for button, new page (only `4000` seen)
   - `5xxx` attribute, low nibble (`500C`/`500E`/`5001` around magic names)
 - Typical line: `{spd:00}{col:01}NAME{col:00}{n}{spd:05}text{n}text{p}{n}...`
