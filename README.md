@@ -10,9 +10,19 @@ patching steps. The patched ROM is 8 MiB.
 **Found a bug?** [Report it](../../issues/new/choose): untranslated text, typos, overflow, crashes. Attaching a savestate
 helps most.
 
-## What is translated
-All dialogue, the intro and ending, the tutorial, menus, options, records, the pause and save screens, the title logo
-and the staff roll.
+## Translation status
+| Part | Status |
+|---|---|
+| Dialogue | Translated |
+| Intro and ending captions, tutorial | Translated |
+| Menus, options, records, pause and save screens | Translated (the point unit after scores is left out) |
+| Title logo | Translated (the emblem is dropped) |
+| Staff roll | Translated (names in Japanese order, family name in capitals) |
+| Time-attack and expert-mode screens | Not checked in play (they need a cleared save) |
+
+The title menu, HUD, stage and result labels were already English in the original.
+
+Known issues: none known; [report one](../../issues/new/choose).
 
 ## Building from source
 You need your own ROM under `rom/` (gitignored). See `CLAUDE.md` for the commands (`python -X utf8 build.py`,
